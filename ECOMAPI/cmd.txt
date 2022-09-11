@@ -1,0 +1,26 @@
+to change how to run the project
+instead of using
+' node index.js 
+add to the script array in the package.json file
+"start":'nodemon index.js"
+//then to run the project
+npm start 
+
+********************
+add dependencies 
+    1.express use on top of nodejs
+    2.mongoose. use on top of mongo db
+    3.nodemon to watch on the change and auto run
+    4.dotenv to save sensitive data
+    5.crypto-js to incrypt and decrypting passwords
+    6.jsonwebtoken to protect and make secure connection between server and client
+    7.
+********************
+git cmd
+git touch .gitignore // inside add the node_modules/* file
+********************
+git cmd
+1.git touch .gitignore // inside add the node_modules/* file
+
+2.git remote add origin "github url"
+3.git push --set-upstream origin master /// first time pushing to remote github 

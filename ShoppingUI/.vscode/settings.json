@@ -1,0 +1,7 @@
+{
+    "AREPL.defaultFilterTypes": [
+    
+        "<class 'module'>",
+        "<class 'function'>"
+    ]
+}
