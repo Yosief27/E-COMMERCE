@@ -1,2 +1,0 @@
-1.installing material ui
-npm i material-ui/core @material-ui/icons

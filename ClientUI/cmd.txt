@@ -1,0 +1,8 @@
+1.installing material ui
+npm i material-ui/core @material-ui/icons
+
+2. installing react-router-dom
+    npm i react-router-dom
+
+3. useLocation hook is used to extract information from the url ,it comes with react-router-dom 
+    

@@ -1,11 +1,32 @@
+import {useLocation} from 'react-router-dom'
+import{useState} from 'react';
 import Navbar from "../components/Navbar"
 import Announcement from "../components/Announcement";
 import Footer  from "../components/Footer";
-import Product from "../components/Product";
+import Products from "../components/Products";
 import styled from 'styled-components'
 import Newsletter from "../components/Newsletter";
 import {mobile} from '../responsive';
 const ProductList = () => {
+  const [filters,setFilters]=useState({})
+  const [sort,setSort]=useState("newest");
+
+  const history= useLocation();
+  const cat=history.pathname.split("/")[2]
+// functions
+
+  const handleFilter=(e)=>{
+    const value=e.target.value;
+    setFilters({
+      ...filters,
+    
+      [e.target.name]:value
+    });
+
+  }
+  
+  
+  //style components
   const Title=styled.h1`
     ${mobile({fontSize:'1.5em',textAlign:'center',fontWeight:'600'})}
   `;
@@ -37,6 +58,7 @@ const ProductList = () => {
   
   `;
 
+
   return (
     <div>
         <Announcement/>
@@ -44,8 +66,8 @@ const ProductList = () => {
         <Title>Dress</Title>
         <FilterContainer>
             <Filter><FilterText>Search Product:
-                <Select>
-                    <Option selected disabled>Color</Option>
+                <Select name="color" onChange={handleFilter}>
+                    <Option disabled>Color</Option>
                     <Option >White</Option>
                     <Option >Black</Option>
                     <Option >Red</Option>
@@ -53,8 +75,8 @@ const ProductList = () => {
                     <Option >Yellow</Option>
                     <Option >Green</Option>
                 </Select> 
-                 <Select>
-                    <Option selected disabled>Size</Option>
+                 <Select name="size" onChange={handleFilter}>
+                    <Option  disabled>Size</Option>
                     <Option >S</Option>
                     <Option >M</Option>
                     <Option >L</Option>
@@ -65,17 +87,17 @@ const ProductList = () => {
  
                 </FilterText></Filter>
             <Filter><FilterText>Sort Product: 
-                 <Select>
-                    <Option selected disabled>Newest</Option>
-                    <Option >Price(asc)</Option>
-                    <Option >Price(desc)</Option>
+                 <Select  onChange={e=>setSort(e.target.value)}>
+                    <Option  disabled value="newest">Newest</Option>
+                    <Option value="asc" >Price(asc)</Option>
+                    <Option value="desc" >Price(desc)</Option>
                     
                 </Select> 
  
    
             </FilterText></Filter>
         </FilterContainer>
-        <Product/>
+        <Products sort={sort} filters={filters} cat={cat}/>
         <Newsletter/>
         <Footer/>
     </div>

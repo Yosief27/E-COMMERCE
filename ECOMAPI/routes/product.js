@@ -13,7 +13,6 @@ router.post('/',verifyTokenAndAdmin,async (req,res)=>{
     }catch(err){
         res.status(500).json(err)
     }
-    
 })
 router.put('/:id',verifyTokenAndAdmin,async (req,res)=>{
     try{

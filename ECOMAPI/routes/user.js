@@ -3,8 +3,8 @@ const CryptoJS=require('crypto-js')
 const User =require('../models/User')
 const {verifyToken,verifyTokenAndAuthorization,verifyTokenAndAdmin}=require('./Middleware/verifyToken')
 
-router.put('/updateuser/:id',verifyTokenAndAuthorization,async (req,res)=>{
-    //user can change the password
+router.put('/:id',verifyTokenAndAuthorization,async (req,res)=>{
+    //user can change the password so needs to be encrypted before updated.
     if(req.body.password){
         req.body.password=CryptoJS.AES.encrypt(
             req.body.password,
@@ -23,7 +23,7 @@ router.put('/updateuser/:id',verifyTokenAndAuthorization,async (req,res)=>{
     }
 })
 //Delete user api
-router.delete('/deleteuser/:id',verifyTokenAndAuthorization, async (req,res)=>{
+router.delete('/:id',verifyTokenAndAuthorization, async (req,res)=>{
      try{
      const userDelete= await User.findByIdAndDelete(req.params.id);
      res.status(200).json("User successfully deleted.")
@@ -33,7 +33,7 @@ router.delete('/deleteuser/:id',verifyTokenAndAuthorization, async (req,res)=>{
 
 })
 //Get user by id 
-router.get('/finduser/:id',verifyTokenAndAdmin, async (req,res)=>{
+router.get('/:id',verifyTokenAndAdmin, async (req,res)=>{
      try{
      const userDelete= await User.findById(req.params.id);
      const {password,...otherDetail}=userDelete._doc;

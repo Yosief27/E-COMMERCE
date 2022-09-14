@@ -14,7 +14,7 @@ add dependencies
     4.dotenv to save sensitive data
     5.crypto-js to incrypt and decrypting passwords
     6.jsonwebtoken to protect and make secure connection between server and client
-    7.
+   
 ********************
 git cmd
 git touch .gitignore // inside add the node_modules/* file

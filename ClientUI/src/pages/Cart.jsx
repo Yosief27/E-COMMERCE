@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Announcement from '../components/Announcement';
-import Addias from '../../src/assets/addias.png';
-import  Air from '../../src/assets/air.png';
+import Addias from '../assets/addias.png';
+import  Air from '../assets/air.png';
 import{Add,Remove} from '@material-ui/icons';
 import {mobile} from '../responsive';
 //styled comp

@@ -45,7 +45,13 @@ const Navbar = () => {
 
     const Input=styled.input`
         border:none;
-        ${mobile({width: "4em"})};           
+        padding:0.5em 0;
+        background-color: #f1f1f1;
+        text-align:center;
+        ${mobile({width: "4em"})}; 
+        &:hover{
+            background-color: white;
+        }                  
     `
 
     //Right items
