@@ -8,5 +8,7 @@ npm i material-ui/core @material-ui/icons
 
 4.to open a code resouce one you clone from github 
     code -r .
+5.related to pull request and merge
+6.related to github practices.
 
 
