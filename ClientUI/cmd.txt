@@ -5,4 +5,6 @@ npm i material-ui/core @material-ui/icons
     npm i react-router-dom
 
 3. useLocation hook is used to extract information from the url ,it comes with react-router-dom 
-    
+
+4.to open a code resouce one you clone from github 
+    code -r .
