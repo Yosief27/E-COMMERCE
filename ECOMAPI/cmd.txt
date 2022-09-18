@@ -25,3 +25,5 @@ git cmd
 2.git remote add origin "github url"
 3.git push --set-upstream origin master /// first time pushing to remote github 
 4. more detail study in github.
+5. first push example
+6. second push example
